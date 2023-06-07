@@ -36,6 +36,6 @@ Kneser-Ney smoothing is a widely used technique that assigns probabilities to N-
 
 Huge language models and stupid backoff: It refers to a combination of two techniques used in text processing and natural language processing (NLP): the use of large language models and the application of a simple smoothing technique called "stupid backoff.
 
-For more detailed Explanation with code please check out my blog at https://www.blogger.com/blog/post/edit/5459498881871054156/1167118870264768150
+For more detailed Explanation with examples please check out my blog at https://www.blogger.com/blog/post/edit/5459498881871054156/1167118870264768150
 
 
