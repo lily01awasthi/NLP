@@ -1,1 +1,14 @@
+NLP : Classification Task
+Classification refers to the task of assigning predefined labels or categories to a given piece of text. There are various classification tasks in NLP, some of which include: Sentiment Analysis(Classification), Text Categorization, Spam Detection, Intent Recognition, Named Entity Recognition (NER), Topic Modeling etc.
+Sentiment Classification
+Sentiment classification is the process of determining the sentiment expressed in a piece of text, whether it is positive, negative, or neutral. Naive Bayes, Support Vector Machines (SVM), Random Forests, and deep learning models like Convolutional Neural Networks (CNNs) and Recurrent Neural Networks (RNNs) are commonly used for NLP classification Algorithms. Naive Bayes is a simple yet effective probabilistic algorithm that can be used for sentiment classification.
+Sentiment Classification using Naive Bayes Algorithm
+The Naive Bayes algorithm is based on Bayes' theorem and assumes that the features (words or n-grams) in the text are conditionally independent of each other given the sentiment category. The Naive Bayes Classifier is a probabilistic and a generative classifier. A probabilistic classifier assigns a probability to each decision it makes. A generative classifier tries to learn the model that generates the data behind the scenes by estimating the assumptions and distributions of the model. It then uses this to predict unseen data. Step-by-step overview of how Naive Bayes classification can be applied to sentiment analysis is given below.
 
+Data Preprocessing
+It involves cleaning and transforming the raw text data into a suitable format for the Naive Bayes classifier. It involves basic text processing and Feature Extraction. Represent the text data as numerical features. The two common approaches are:
+
+    Bag-of-Words: Create a vocabulary of unique words in the dataset and represent each document as a     vector of word frequencies. For example, the sentence "I love this movie" can be represented as [1, 1,    1, 0, 0, ...], where each position in the vector corresponds to a word in the vocabulary.
+
+
+    TF-IDF (Term Frequency-Inverse Document Frequency): Assign weights to the words based on their     frequency in the document and rarity across the entire dataset. Words that appear frequently in a            specific document but rarely in other documents receive higher weights. This representation aims to     capture the importance of words in a document. For example, using the TF-IDF approach, the                sentence "I love this movie" can be represented as [0.3, 0.5, 0.7, 0, 0, ...], where each position in the        vector corresponds to a word in the vocabulary.
