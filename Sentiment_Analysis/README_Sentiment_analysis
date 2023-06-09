@@ -12,3 +12,53 @@ It involves cleaning and transforming the raw text data into a suitable format f
 
 
     TF-IDF (Term Frequency-Inverse Document Frequency): Assign weights to the words based on their     frequency in the document and rarity across the entire dataset. Words that appear frequently in a            specific document but rarely in other documents receive higher weights. This representation aims to     capture the importance of words in a document. For example, using the TF-IDF approach, the                sentence "I love this movie" can be represented as [0.3, 0.5, 0.7, 0, 0, ...], where each position in the        vector corresponds to a word in the vocabulary.
+
+Training
+It involves splitting of the dataset into a training set and a validation set. The training set is used to train the Naive Bayes classifier. During training, the classifier learns the conditional probabilities of the features given each sentiment category.
+
+Naive Bayes Assumptions
+The Naive Bayes algorithm assumes that the features are conditionally independent given the sentiment category. This assumption simplifies the computation of probabilities. In sentiment analysis, this means that the presence of one word or n-gram does not depend on the presence of other words or n-grams in the text.
+The Naive Bayes assumption comes into play when training the classifier and making predictions. It assumes that the presence of one word or n-gram in the document does not depend on the presence of other words or n-grams. This simplifies the computation of probabilities as the algorithm treats each feature independently when estimating the likelihoods of different sentiment categories. While this assumption may not hold true in reality, Naive Bayes classifiers can still provide effective results for sentiment analysis tasks.
+
+Calculating Probabilities
+Given a new document, the Naive Bayes classifier calculates the probability of each sentiment category using Bayes' theorem. It multiplies the prior probability of each sentiment category (estimated from the training data) with the conditional probabilities of the observed features (words or n-grams) for each category.
+
+The predict_proba method of the classifier returns the predicted probabilities. These probabilities represent the likelihood of the new document belonging to each sentiment category.
+Finally, iterating through the sentiment categories (classifier.classes_) and the corresponding probabilities (probabilities[0]) and print the probability for each category
+
+In the code above,the probabilities are calculated using Bayes' theorem, which involves multiplying the prior probability of each sentiment category (estimated from the training data) with the conditional probabilities of the observed features (words or n-grams) for each category. This calculation allows the classifier to determine the most likely sentiment category for the new document based on the observed features.
+
+Classification
+Finally, the Naive Bayes classifier assigns the sentiment category with the highest probability as the predicted sentiment for the input document.
+
+Evaluation
+To evaluate the performance of the classifier on the validation set. Common evaluation metrics for sentiment analysis include accuracy, precision, recall, and F1-score. Further techniques like cross-validation or train-test splits to get a more reliable estimate of the classifier's performance can also be used.
+
+
+The accuracy_score function calculates the accuracy, which measures the proportion of correctly predicted labels to the total number of instances. It returns a value between 0 and 1, where 1 indicates perfect accuracy.
+
+The precision_score function calculates the precision, which measures the ability of the classifier to correctly predict positive instances out of the total instances predicted as positive. It returns a value between 0 and 1, where 1 indicates perfect precision. The average='macro' parameter calculates precision for each class and then takes the average.
+
+The recall_score function calculates the recall, which measures the ability of the classifier to correctly predict positive instances out of the total actual positive instances. It returns a value between 0 and 1, where 1 indicates perfect recall. The average='macro' parameter calculates recall for each class and then takes the average.
+
+The f1_score function calculates the F1-score, which is the harmonic mean of precision and recall. It provides a balanced measure of both precision and recall. It returns a value between 0 and 1, where 1 indicates the best F1-score. The average='macro' parameter calculates the F1-score for each class and then takes the average.
+
+Additionally, cross-validation or train-test splits can be used to get a more reliable estimate of the classifier's performance. 
+
+ Image is derived from Dr. Sven. Naumann NLP department Universität trier lecture materials
+
+In cross-validation, we choose a number k, and partition our data into k disjoint subsets called folds. Now we choose one of those k folds as a test set, train our classifier on the remaining k − 1 folds, and then compute the error rate on the test set. Then we repeat with another fold as the test set, again training on the other k − 1 folds. We do this sampling process k times and average the test set error rate from these k runs to get an average error rate. If we choose k = 10, we would train 10 different models (each on 90% of our data), test the model 10 times, and average these 10 values. This is called 10-fold cross-validation.
+
+Statistical Significance Testing
+Finally, to identify which classifier is better than the other statistical significance testing is done. 
+    
+Non-parametric (Paired Bootstrap) Test
+To perform statistical significance testing using the Paired Bootstrap test (a non-parametric test) in Python to compare the performance of two classifiers in sentiment analysis. It is a resampling technique that does not assume any specific distribution of the data.
+
+In the code snippet above, we have two arrays metric_classifier_a and metric_classifier_b representing the evaluation metrics (e.g., accuracy) of Classifier A and Classifier B, respectively.
+
+
+
+
+
+
